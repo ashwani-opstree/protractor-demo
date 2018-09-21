@@ -1,5 +1,5 @@
 // Tests for the calculator.
-var HtmlReporter = require('protractor-html-screenshot-reporter');
+var HtmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -14,10 +14,12 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
+
   onPrepare: function() {
     // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
     jasmine.getEnv().addReporter(new HtmlReporter({
-      baseDirectory: 'screenshots'
-    }));
-  }
+      baseDirectory: 'results/screenshots'
+    }).getJasmine2Reporter());
+ }
+
 };
