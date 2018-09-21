@@ -14,8 +14,10 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
-  // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
-  jasmine:getEnv().addReporter(new HtmlReporter({
-    baseDirectory: 'screenshots'
-  }))
+  onPrepare: function() {
+    // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'screenshots'
+    }));
+  }
 };
