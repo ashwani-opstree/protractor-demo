@@ -1,3 +1,4 @@
+
 describe('slow calculator', function() {
   beforeEach(function() {
     browser.get('http://localhost:3456');
@@ -8,7 +9,7 @@ describe('slow calculator', function() {
     element(by.model('second')).sendKeys(5);
 
     element(by.id('gobutton')).click();
-
+    
     expect(element(by.binding('latest')).getText()).
         toEqual('9');
   });
@@ -43,6 +44,7 @@ describe('slow calculator', function() {
         expect(arr.length).toEqual(2);
         expect(arr[0].getText()).toEqual('30'); // 10 + 20 = 30
         expect(arr[1].getText()).toEqual('2'); // 1 + 1 = 2
+
       });
     });
   });
