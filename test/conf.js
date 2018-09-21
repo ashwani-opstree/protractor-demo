@@ -15,7 +15,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
-  jasmine.getEnv().addReporter(new HtmlReporter({
+  jasmine:getEnv().addReporter(new HtmlReporter({
     baseDirectory: 'screenshots'
   }))
 };
